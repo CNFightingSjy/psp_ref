@@ -1,0 +1,22 @@
+Loading encoders weights from irse50!
+Loading decoder weights from pretrained!
+Traceback (most recent call last):
+  File "training/train.py", line 32, in <module>
+    main()
+  File "training/train.py", line 27, in main
+    coach = Coach(opts)
+  File "./training/coach.py", line 55, in __init__
+    self.lpips_loss = LPIPS(net_type='alex').to(self.device).eval()
+  File "/data/shijianyang/code/pixel2style2pixel/training/criteria/lpips/lpips.py", line 23, in __init__
+    self.net = get_network(net_type).to("cuda")
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/nn/modules/module.py", line 673, in to
+    return self._apply(convert)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/nn/modules/module.py", line 387, in _apply
+    module._apply(fn)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/nn/modules/module.py", line 387, in _apply
+    module._apply(fn)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/nn/modules/module.py", line 409, in _apply
+    param_applied = fn(param)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/nn/modules/module.py", line 671, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+RuntimeError: CUDA error: an illegal memory access was encountered

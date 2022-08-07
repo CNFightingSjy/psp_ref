@@ -13,8 +13,10 @@ class TrainOptions:
 		self.parser.add_argument('--dataset_type', default='ffhq_encode', type=str, help='Type of dataset/experiment to run')
 		self.parser.add_argument('--encoder_type', default='GradualStyleEncoder', type=str, help='Which encoder to use')
 		self.parser.add_argument('--input_nc', default=3, type=int, help='Number of input image channels to the psp encoder')
+		self.parser.add_argument('--ref_input_nc', default=3, type=int, help='Number of input reference channels to the psp encoder')
 		self.parser.add_argument('--label_nc', default=0, type=int, help='Number of input label channels to the psp encoder')
 		self.parser.add_argument('--output_size', default=1024, type=int, help='Output size of generator')
+		self.parser.add_argument('--channel_multiplier', default=2, type=int, help='channel multiplier factor for the model. config-f = 2, else = 1')
 
 		self.parser.add_argument('--batch_size', default=4, type=int, help='Batch size for training')
 		self.parser.add_argument('--test_batch_size', default=2, type=int, help='Batch size for testing and inference')
@@ -34,7 +36,8 @@ class TrainOptions:
 		self.parser.add_argument('--lpips_lambda_crop', default=0, type=float, help='LPIPS loss multiplier factor for inner image region')
 		self.parser.add_argument('--l2_lambda_crop', default=0, type=float, help='L2 loss multiplier factor for inner image region')
 		self.parser.add_argument('--moco_lambda', default=0, type=float, help='Moco-based feature similarity loss multiplier factor')
-
+		self.parser.add_argument('--adv_lambda', default=1.0, type=float, help='adversarial loss multiplier factor')
+		
 		self.parser.add_argument('--stylegan_weights', default=model_paths['stylegan_ffhq'], type=str, help='Path to StyleGAN model weights')
 		self.parser.add_argument('--checkpoint_path', default=None, type=str, help='Path to pSp model checkpoint')
 

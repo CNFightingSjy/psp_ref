@@ -1,0 +1,22 @@
+
+Loading encoders weights from irse50!
+Loading decoder weights from pretrained!
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1616554800319/work/torch/csrc/generic/serialization.cpp line=161 error=700 : an illegal memory access was encountered
+Traceback (most recent call last):
+  File "training/train.py", line 32, in <module>
+    main()
+  File "training/train.py", line 27, in main
+    coach = Coach(opts)
+  File "./training/coach.py", line 55, in __init__
+    self.lpips_loss = LPIPS(net_type='alex').to(self.device).eval()
+  File "/data/shijianyang/code/pixel2style2pixel/training/criteria/lpips/lpips.py", line 27, in __init__
+    self.lin.load_state_dict(get_state_dict(net_type, version))
+  File "/data/shijianyang/code/pixel2style2pixel/training/criteria/lpips/utils.py", line 19, in get_state_dict
+    map_location=None if torch.cuda.is_available() else torch.device('cpu')
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/hub.py", line 528, in load_state_dict_from_url
+    return torch.load(cached_file, map_location=map_location)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/serialization.py", line 593, in load
+    return _legacy_load(opened_file, map_location, pickle_module, **pickle_load_args)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/serialization.py", line 779, in _legacy_load
+    deserialized_objects[key]._set_from_file(f, offset, f_should_read_directly)
+RuntimeError: cuda runtime error (700) : an illegal memory access was encountered at /opt/conda/conda-bld/pytorch_1616554800319/work/torch/csrc/generic/serialization.cpp:161

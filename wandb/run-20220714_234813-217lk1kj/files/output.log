@@ -1,0 +1,66 @@
+
+Loading encoders weights from irse50!
+Loading decoder weights from pretrained!
+Loading MOCO model from path: pretrained_models/moco_v2_800ep_pretrain.pt
+Loading dataset for cloth_encode
+Number of training samples: 14000
+Number of test samples: 4000
+/data/shijianyang/code/pixel2style2pixel/training/ranger.py:123: UserWarning: This overload of addcmul_ is deprecated:
+	addcmul_(Number value, Tensor tensor1, Tensor tensor2)
+Consider using one of the following signatures instead:
+	addcmul_(Tensor tensor1, Tensor tensor2, *, Number value) (Triggered internally at  /opt/conda/conda-bld/pytorch_1616554800319/work/torch/csrc/utils/python_arg_parser.cpp:1005.)
+  exp_avg_sq.mul_(beta2).addcmul_(1 - beta2, grad, grad)
+torch.Size([2, 3, 4, 4])
+torch.Size([2, 3, 8, 8])
+torch.Size([2, 3, 16, 16])
+torch.Size([2, 3, 32, 32])
+torch.Size([2, 3, 64, 64])
+torch.Size([2, 3, 128, 128])
+torch.Size([2, 3, 4, 4])
+torch.Size([2, 3, 8, 8])
+torch.Size([2, 3, 16, 16])
+torch.Size([2, 3, 32, 32])
+torch.Size([2, 3, 64, 64])
+torch.Size([2, 3, 128, 128])
+Metrics for train, step 0
+	loss_l2 =  0.24484452605247498
+	loss_lpips =  0.797817587852478
+	loss_moco =  0.6277490854263306
+	id_improve =  -0.20271100103855133
+	loss_adv =  0.3465735912322998
+	loss =  1.2924470901489258
+> /data/shijianyang/code/pixel2style2pixel/training/coach.py(191)validate()
+-> with torch.no_grad():
+[?2004h(Pdb) n
+> /data/shijianyang/code/pixel2style2pixel/training/coach.py(193)validate()
+-> x, r, r_rgb, y = x.to(self.device).float(), r.to(self.device).float(), r_rgb.to(self.device).float(), y.to(self.device).float()
+[?2004h(Pdb) n
+> /data/shijianyang/code/pixel2style2pixel/training/coach.py(194)validate()
+-> y_hat, latent = self.net.forward(x, r, return_latents=True)
+[?2004h(Pdb) n
+torch.Size([2, 3, 4, 4])
+torch.Size([2, 3, 8, 8])
+torch.Size([2, 3, 16, 16])
+torch.Size([2, 3, 32, 32])
+torch.Size([2, 3, 64, 64])
+torch.Size([2, 3, 128, 128])
+> /data/shijianyang/code/pixel2style2pixel/training/coach.py(195)validate()
+-> real_pred = []
+[?2004h(Pdb) q
+[?2004l
+Traceback (most recent call last):
+  File "training/train.py", line 32, in <module>
+    main()
+  File "training/train.py", line 28, in main
+    coach.train()
+  File "./training/coach.py", line 166, in train
+    val_loss_dict = self.validate()
+  File "./training/coach.py", line 195, in validate
+    fake_pred = []
+  File "./training/coach.py", line 195, in validate
+    fake_pred = []
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit

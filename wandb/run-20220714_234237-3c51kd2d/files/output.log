@@ -1,0 +1,26 @@
+Loading encoders weights from irse50!
+Loading decoder weights from pretrained!
+Loading MOCO model from path: pretrained_models/moco_v2_800ep_pretrain.pt
+Loading dataset for cloth_encode
+Number of training samples: 14000
+Number of test samples: 4000
+Traceback (most recent call last):
+  File "training/train.py", line 32, in <module>
+    main()
+  File "training/train.py", line 28, in main
+    coach.train()
+  File "./training/coach.py", line 130, in train
+    loss, loss_dict, id_logs = self.calc_loss(x, y, y_hat, real_pred, fake_pred, False, latent)
+  File "./training/coach.py", line 317, in calc_loss
+    loss_moco, sim_improvement, id_logs = self.moco_loss(y_hat, y, x)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/data/shijianyang/code/pixel2style2pixel/training/criteria/moco_loss.py", line 61, in forward
+    diff_target = y_hat_feats[i].dot(y_feats[i])
+RuntimeError: 1D tensors expected, but got 0D and 0D tensors
+torch.Size([1, 3, 4, 4])
+torch.Size([1, 3, 8, 8])
+torch.Size([1, 3, 16, 16])
+torch.Size([1, 3, 32, 32])
+torch.Size([1, 3, 64, 64])
+torch.Size([1, 3, 128, 128])

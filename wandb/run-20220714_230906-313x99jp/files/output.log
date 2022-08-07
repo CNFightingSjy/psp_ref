@@ -1,0 +1,78 @@
+
+Loading encoders weights from irse50!
+Loading decoder weights from pretrained!
+Loading MOCO model from path: pretrained_models/moco_v2_800ep_pretrain.pt
+Loading dataset for cloth_encode
+Number of training samples: 14000
+Number of test samples: 4000
+torch.Size([4, 3, 4, 4])
+torch.Size([4, 3, 8, 8])
+torch.Size([4, 3, 16, 16])
+torch.Size([4, 3, 32, 32])
+torch.Size([4, 3, 64, 64])
+torch.Size([4, 3, 128, 128])
+torch.Size([4, 3, 4, 4])
+torch.Size([4, 3, 8, 8])
+torch.Size([4, 3, 16, 16])
+torch.Size([4, 3, 32, 32])
+torch.Size([4, 3, 64, 64])
+torch.Size([4, 3, 128, 128])
+/data/shijianyang/code/pixel2style2pixel/training/ranger.py:123: UserWarning: This overload of addcmul_ is deprecated:
+	addcmul_(Number value, Tensor tensor1, Tensor tensor2)
+Consider using one of the following signatures instead:
+	addcmul_(Tensor tensor1, Tensor tensor2, *, Number value) (Triggered internally at  /opt/conda/conda-bld/pytorch_1616554800319/work/torch/csrc/utils/python_arg_parser.cpp:1005.)
+  exp_avg_sq.mul_(beta2).addcmul_(1 - beta2, grad, grad)
+Metrics for train, step 0
+	loss_l2 =  0.2340584695339203
+	loss_lpips =  0.7945661544799805
+	loss_moco =  0.7079130411148071
+	id_improve =  -0.45655854418873787
+	loss_adv =  0.1732867956161499
+	loss =  1.1137895584106445
+0
+torch.Size([4, 3, 4, 4])
+torch.Size([4, 3, 8, 8])
+torch.Size([4, 3, 16, 16])
+torch.Size([4, 3, 32, 32])
+torch.Size([4, 3, 64, 64])
+torch.Size([4, 3, 128, 128])
+Traceback (most recent call last):
+  File "training/train.py", line 32, in <module>
+    main()
+  File "training/train.py", line 28, in main
+    coach.train()
+  File "./training/coach.py", line 165, in train
+    val_loss_dict = self.validate()
+  File "./training/coach.py", line 193, in validate
+    y_hat, latent = self.net.forward(x, r, return_latents=True)
+  File "/data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py", line 108, in forward
+    return_latents=return_latents)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/data/shijianyang/code/pixel2style2pixel/training/models/stylegan2/model.py", line 530, in forward
+    out = conv1(out, latent[:, i], noise=noise1)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/data/shijianyang/code/pixel2style2pixel/training/models/stylegan2/model.py", line 333, in forward
+    out = self.conv(input, style)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/data/shijianyang/code/pixel2style2pixel/training/models/stylegan2/model.py", line 258, in forward
+    out = self.blur(out)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/data/shijianyang/code/pixel2style2pixel/training/models/stylegan2/model.py", line 86, in forward
+    out = upfirdn2d(input, self.kernel, pad=self.pad)
+  File "/data/shijianyang/code/pixel2style2pixel/training/models/stylegan2/op/upfirdn2d.py", line 144, in upfirdn2d
+    input, kernel, (up, up), (down, down), (pad[0], pad[1], pad[0], pad[1])
+  File "/data/shijianyang/code/pixel2style2pixel/training/models/stylegan2/op/upfirdn2d.py", line 98, in forward
+    ctx.save_for_backward(kernel, torch.flip(kernel, [0, 1]))
+RuntimeError: CUDA error: misaligned address
+1
+torch.Size([4, 3, 4, 4])
+torch.Size([4, 3, 8, 8])
+torch.Size([4, 3, 16, 16])
+torch.Size([4, 3, 32, 32])
+torch.Size([4, 3, 64, 64])
+torch.Size([4, 3, 128, 128])
+2

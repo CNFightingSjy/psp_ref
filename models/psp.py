@@ -25,14 +25,18 @@ class pSp(nn.Module):
 		super(pSp, self).__init__()
 		self.set_opts(opts)
 		# compute number of style inputs based on the output resolution
-		self.opts.n_styles = int(math.log(self.opts.output_size, 2)) * 2 - 2
+		self.opts.n_styles = int(math.log(self.opts.output_size, 2)) * 2 - 2 # 根据输入分辨率计算风格输入的数量，考虑是根据不同大小的特征图尺寸计算
 		# Define architecture
-		self.encoder = self.set_encoder()
-		self.decoder = Generator(self.opts.output_size, 512, 8)
-		self.face_pool = torch.nn.AdaptiveAvgPool2d((256, 256))
-		# Load weights if needed
-		self.load_weights()
+		# 增加一个额外的encoder对色块图进行特征提取
+		# self.ref_encoder = self.set_encoder()
 
+		self.encoder = self.set_encoder()
+		self.decoder = Generator(self.opts.output_size, 512, 8)# decoder采用的是stylegan2的生成器
+		self.face_pool = torch.nn.AdaptiveAvgPool2d((256, 256))# 针对人脸使用的池化？
+		# Load weights if needed
+		# self.load_weights()
+
+	# 构建编码器
 	def set_encoder(self):
 		if self.opts.encoder_type == 'GradualStyleEncoder':
 			encoder = psp_encoders.GradualStyleEncoder(50, 'ir_se', self.opts)
@@ -66,6 +70,7 @@ class pSp(nn.Module):
 			else:
 				self.__load_latent_avg(ckpt, repeat=self.opts.n_styles)
 
+	# 添加新的输入使用ADAIN的方法，将提取到的两个特征进行融合送入到合成网络
 	def forward(self, x, resize=True, latent_mask=None, input_code=False, randomize_noise=True,
 	            inject_latent=None, return_latents=False, alpha=None):
 		if input_code:
@@ -73,24 +78,28 @@ class pSp(nn.Module):
 		else:
 			codes = self.encoder(x)
 			# normalize with respect to the center of an average face
+			# w为预训练生成器的平均风格向量，编码器旨在学习与平均风格向量有关的隐编码
+			# 修改为获取平均服装样式
 			if self.opts.start_from_latent_avg:
 				if self.opts.learn_in_w:
 					codes = codes + self.latent_avg.repeat(codes.shape[0], 1)
 				else:
 					codes = codes + self.latent_avg.repeat(codes.shape[0], 1, 1)
 
-
+		# 对风格向量进行抽样，随机在w中出样一个512向量并通过赋值w在W+中生成一个对应的隐编码，再通过随机生成的隐编码替换计算出的隐编码来进行风格混合
 		if latent_mask is not None:
 			for i in latent_mask:
 				if inject_latent is not None:
 					if alpha is not None:
-						codes[:, i] = alpha * inject_latent[:, i] + (1 - alpha) * codes[:, i]
+						codes[:, i] = alpha * inject_latent[:, i] + (1 - alpha) * codes[:, i]# alpha参数用于混合两种风格
 					else:
 						codes[:, i] = inject_latent[:, i]
 				else:
 					codes[:, i] = 0
 
 		input_is_latent = not input_code
+
+		# 将得到的向量送入stylegan的合成网络中
 		images, result_latent = self.decoder([codes],
 		                                     input_is_latent=input_is_latent,
 		                                     randomize_noise=randomize_noise,

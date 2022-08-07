@@ -1,0 +1,67 @@
+
+Loading encoders weights from irse50!
+Loading decoder weights from pretrained!
+Loading MOCO model from path: pretrained_models/moco_v2_800ep_pretrain.pt
+Loading dataset for cloth_encode
+Number of training samples: 14000
+Number of test samples: 4000
+> /data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py(80)forward()
+-> if input_code:
+
+[?2004h(Pdb) n
+> /data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py(83)forward()
+-> codes = self.encoder(x, r)
+[?2004h(Pdb) n
+> /data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py(87)forward()
+-> if self.opts.start_from_latent_avg:
+[?2004h(Pdb) n
+> /data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py(88)forward()
+-> if self.opts.learn_in_w:
+[?2004h(Pdb) n
+> /data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py(91)forward()
+-> codes = codes + self.latent_avg.repeat(codes.shape[0], 1, 1)
+[?2004h(Pdb) n
+> /data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py(94)forward()
+-> if latent_mask is not None:
+[?2004h(Pdb) n
+> /data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py(104)forward()
+-> input_is_latent = not input_code
+[?2004h(Pdb) n
+> /data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py(107)forward()
+-> images, result_latent = self.decoder([codes],
+[?2004h(Pdb) n
+> /data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py(108)forward()
+-> input_is_latent=input_is_latent,
+[?2004h(Pdb) n
+> /data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py(109)forward()
+-> randomize_noise=randomize_noise,
+[?2004h(Pdb) n
+> /data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py(110)forward()
+-> return_latents=return_latents)
+[?2004h(Pdb) n
+torch.Size([2, 3, 4, 4])
+torch.Size([2, 3, 8, 8])
+torch.Size([2, 3, 16, 16])
+torch.Size([2, 3, 32, 32])
+torch.Size([2, 3, 64, 64])
+torch.Size([2, 3, 128, 128])
+> /data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py(112)forward()
+-> if resize:
+[?2004h(Pdb)
+Traceback (most recent call last):
+  File "training/train.py", line 32, in <module>
+    main()
+  File "training/train.py", line 28, in main
+    coach.train()
+  File "./training/coach.py", line 114, in train
+    y_hat, latent = self.net.forward(x, r, return_latents=True)
+  File "/data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py", line 112, in forward
+    if resize:
+  File "/data/shijianyang/code/pixel2style2pixel/training/models/psp_ref.py", line 112, in forward
+    if resize:
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+[?2004h(Pdb) q
+[?2004l

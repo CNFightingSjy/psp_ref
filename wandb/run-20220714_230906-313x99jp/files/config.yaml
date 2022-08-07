@@ -1,0 +1,130 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.9
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.7.11
+    start_time: 1657811346
+    t:
+      1:
+      - 1
+      2:
+      - 1
+      - 2
+      - 3
+      3:
+      - 13
+      - 16
+      4: 3.7.11
+      5: 0.12.9
+      8:
+      - 5
+adv_lambda:
+  desc: null
+  value: 1.0
+batch_size:
+  desc: null
+  value: 4
+board_interval:
+  desc: null
+  value: 50
+channel_multiplier:
+  desc: null
+  value: 2
+checkpoint_path:
+  desc: null
+  value: null
+dataset_type:
+  desc: null
+  value: cloth_encode
+device:
+  desc: null
+  value: cuda:1
+encoder_type:
+  desc: null
+  value: GradualStyleEncoder
+exp_dir:
+  desc: null
+  value: /data/shijianyang/code/pixel2style2pixel/path/to/experiment
+id_lambda:
+  desc: null
+  value: 0
+image_interval:
+  desc: null
+  value: 100
+input_nc:
+  desc: null
+  value: 1
+l2_lambda:
+  desc: null
+  value: 1.0
+l2_lambda_crop:
+  desc: null
+  value: 0
+label_nc:
+  desc: null
+  value: 0
+learn_in_w:
+  desc: null
+  value: false
+learning_rate:
+  desc: null
+  value: 0.0001
+lpips_lambda:
+  desc: null
+  value: 0.8
+lpips_lambda_crop:
+  desc: null
+  value: 0
+max_steps:
+  desc: null
+  value: 500000
+moco_lambda:
+  desc: null
+  value: 0.1
+optim_name:
+  desc: null
+  value: ranger
+output_size:
+  desc: null
+  value: 256
+ref_input_nc:
+  desc: null
+  value: 2
+resize_factors:
+  desc: null
+  value: null
+save_interval:
+  desc: null
+  value: 5000
+start_from_latent_avg:
+  desc: null
+  value: true
+stylegan_weights:
+  desc: null
+  value: pretrained_models/stylegan2-ffhq-config-f.pt
+test_batch_size:
+  desc: null
+  value: 4
+test_workers:
+  desc: null
+  value: 8
+train_decoder:
+  desc: null
+  value: false
+use_wandb:
+  desc: null
+  value: true
+val_interval:
+  desc: null
+  value: 2500
+w_norm_lambda:
+  desc: null
+  value: 0
+workers:
+  desc: null
+  value: 8

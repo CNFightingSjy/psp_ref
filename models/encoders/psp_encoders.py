@@ -1,3 +1,4 @@
+from re import M
 import numpy as np
 import torch
 import torch.nn.functional as F
@@ -7,13 +8,16 @@ from torch.nn import Linear, Conv2d, BatchNorm2d, PReLU, Sequential, Module
 from models.encoders.helpers import get_blocks, Flatten, bottleneck_IR, bottleneck_IR_SE
 from models.stylegan2.model import EqualLinear
 
-
+'''
+当前考虑该模块为map2style模块？
+convs中包含了num_pools个数的卷积+LeakyReLU模块，通过卷积后进入一个输入输出同等大小的全连接层
+'''
 class GradualStyleBlock(Module):
     def __init__(self, in_c, out_c, spatial):
         super(GradualStyleBlock, self).__init__()
         self.out_c = out_c
         self.spatial = spatial
-        num_pools = int(np.log2(spatial))
+        num_pools = int(np.log2(spatial))# 通过spatial计算所需要的modules个数
         modules = []
         modules += [Conv2d(in_c, out_c, kernel_size=3, stride=2, padding=1),
                     nn.LeakyReLU()]
@@ -28,15 +32,18 @@ class GradualStyleBlock(Module):
     def forward(self, x):
         x = self.convs(x)
         x = x.view(-1, self.out_c)
-        x = self.linear(x)
+        x = self.linear(x)# 生成512个向量送入StyleGAN
         return x
 
+'''
 
+'''
 class GradualStyleEncoder(Module):
     def __init__(self, num_layers, mode='ir', opts=None):
         super(GradualStyleEncoder, self).__init__()
         assert num_layers in [50, 100, 152], 'num_layers should be 50,100, or 152'
         assert mode in ['ir', 'ir_se'], 'mode should be ir or ir_se'
+        # 获得对应的resnet
         blocks = get_blocks(num_layers)
         if mode == 'ir':
             unit_module = bottleneck_IR
@@ -45,18 +52,33 @@ class GradualStyleEncoder(Module):
         self.input_layer = Sequential(Conv2d(opts.input_nc, 64, (3, 3), 1, 1, bias=False),
                                       BatchNorm2d(64),
                                       PReLU(64))
+        # self.ref_input_layer = Sequential(Conv2d(opts.ref_input_nc, 64, (3, 3), 1, 1, bias=False),
+        #                               BatchNorm2d(64),
+        #                               PReLU(64))
+
         modules = []
         for block in blocks:
+            # print(blocks)
             for bottleneck in block:
+                # print(bottleneck)
                 modules.append(unit_module(bottleneck.in_channel,
                                            bottleneck.depth,
                                            bottleneck.stride))
+        # 用一个特征金字塔
         self.body = Sequential(*modules)
+        # print(modules)
 
+        # 根据所需要的style数获取style
         self.styles = nn.ModuleList()
         self.style_count = opts.n_styles
         self.coarse_ind = 3
         self.middle_ind = 7
+        '''
+        初始化所需要的所有map2style模块，训练一个小的映射网络从相应的特征图中提取所学的风格，style存储了获得的风格：
+        风格0-2从小的特征图中产生
+        风格3-6从中等的特征图中产生
+        风格7-18从最大的特征图中产生
+        '''
         for i in range(self.style_count):
             if i < self.coarse_ind:
                 style = GradualStyleBlock(512, 512, 16)
@@ -91,9 +113,12 @@ class GradualStyleEncoder(Module):
         x = self.input_layer(x)
 
         latents = []
+        # 所有的map2style模块
+        # 在此处添加将不同尺度的特征使用spade进行融合
         modulelist = list(self.body._modules.values())
         for i, l in enumerate(modulelist):
             x = l(x)
+            # 记录每个尺度下最后一层输出
             if i == 6:
                 c1 = x
             elif i == 20:
@@ -101,14 +126,19 @@ class GradualStyleEncoder(Module):
             elif i == 23:
                 c3 = x
 
+        '''
+        self.coarse_ind = 3
+        self.middle_ind = 7
+        styles为各个map2style模块，用不同尺度的特征送入不同的map2style中获得对应的latent
+        '''
         for j in range(self.coarse_ind):
-            latents.append(self.styles[j](c3))
+            latents.append(self.styles[j](c3))# 以c3作为作为styles中的第j个Module的输入，将结果存入latents中
 
-        p2 = self._upsample_add(c3, self.latlayer1(c2))
+        p2 = self._upsample_add(c3, self.latlayer1(c2))# layer1将256特征转为512
         for j in range(self.coarse_ind, self.middle_ind):
             latents.append(self.styles[j](p2))
 
-        p1 = self._upsample_add(p2, self.latlayer2(c1))
+        p1 = self._upsample_add(p2, self.latlayer2(c1))# layer2将128特征转为512
         for j in range(self.middle_ind, self.style_count):
             latents.append(self.styles[j](p1))
 
@@ -122,6 +152,7 @@ class BackboneEncoderUsingLastLayerIntoW(Module):
         print('Using BackboneEncoderUsingLastLayerIntoW')
         assert num_layers in [50, 100, 152], 'num_layers should be 50,100, or 152'
         assert mode in ['ir', 'ir_se'], 'mode should be ir or ir_se'
+        # 获得对应所需的resnet
         blocks = get_blocks(num_layers)
         if mode == 'ir':
             unit_module = bottleneck_IR

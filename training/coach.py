@@ -1,6 +1,7 @@
 import os
 import matplotlib
 import matplotlib.pyplot as plt
+from yaml import load
 
 matplotlib.use('Agg')
 
@@ -11,12 +12,16 @@ from torch.utils.tensorboard import SummaryWriter
 import torch.nn.functional as F
 
 from utils import common, train_utils
-from criteria import id_loss, w_norm, moco_loss
+from criteria import id_loss, w_norm, moco_loss, adv_loss
 from configs import data_configs
 from datasets.images_dataset import ImagesDataset
 from criteria.lpips.lpips import LPIPS
-from models.psp import pSp
-from training.ranger import Ranger
+# from models.psp import pSp
+from models.psp_ref import pSp
+from ranger import Ranger
+from refDataLoader import refDataset
+from models.stylegan2.model import Discriminator
+import pdb
 
 
 class Coach:
@@ -25,7 +30,7 @@ class Coach:
 
 		self.global_step = 0
 
-		self.device = 'cuda:0'  # TODO: Allow multiple GPU? currently using CUDA_VISIBLE_DEVICES
+		self.device = 'cuda'  # TODO: Allow multiple GPU? currently using CUDA_VISIBLE_DEVICES
 		self.opts.device = self.device
 
 		if self.opts.use_wandb:
@@ -33,7 +38,10 @@ class Coach:
 			self.wb_logger = WBLogger(self.opts)
 
 		# Initialize network
+		self.size = self.opts.output_size
+		self.channel_multiplier = self.opts.channel_multiplier
 		self.net = pSp(self.opts).to(self.device)
+		self.discriminator = Discriminator(self.size, self.channel_multiplier).to(self.device)
 
 		# Estimate latent_avg via dense sampling if latent_avg is not available
 		if self.net.latent_avg is None:
@@ -52,11 +60,16 @@ class Coach:
 			self.w_norm_loss = w_norm.WNormLoss(start_from_latent_avg=self.opts.start_from_latent_avg)
 		if self.opts.moco_lambda > 0:
 			self.moco_loss = moco_loss.MocoLoss().to(self.device).eval()
+		if self.opts.adv_lambda > 0:
+			# self.d_logistic_loss = adv_loss.d_logistic_loss().to(self.device).eval()
+			# self.g_nonsaturating_loss = adv_loss.g_nonsaturating_loss().to(self.device).eval()
+			self.adv_loss = adv_loss.AdvLoss().to(self.device).eval()
 
 		# Initialize optimizer
 		self.optimizer = self.configure_optimizers()
 
 		# Initialize dataset
+		# 在此增加对于reference的dataloader
 		self.train_dataset, self.test_dataset = self.configure_datasets()
 		self.train_dataloader = DataLoader(self.train_dataset,
 										   batch_size=self.opts.batch_size,
@@ -81,28 +94,71 @@ class Coach:
 		if self.opts.save_interval is None:
 			self.opts.save_interval = self.opts.max_steps
 
+	def requires_grad(model, flag=True):
+		for p in model.parameters():
+			p.requires_grad = flag
+
 	def train(self):
 		self.net.train()
 		while self.global_step < self.opts.max_steps:
+    		# 此处的dataloader包含灰度图x，色块图r，目标图像y
 			for batch_idx, batch in enumerate(self.train_dataloader):
 				self.optimizer.zero_grad()
-				x, y = batch
-				x, y = x.to(self.device).float(), y.to(self.device).float()
-				y_hat, latent = self.net.forward(x, return_latents=True)
-				loss, loss_dict, id_logs = self.calc_loss(x, y, y_hat, latent)
+				x, r, y = batch
+				x, r, y = x.to(self.device).float(), r.to(self.device).float(), y.to(self.device).float()
+				# 训练判别器
+				for p in self.net.parameters():
+					p.requires_grad = False
+				for p in self.discriminator.parameters():
+					p.requires_grad = True
+				y_hat, latent = self.net.forward(x, r, return_latents=True)
+				# 此处添加生成图片和参考图片cat操作，变为4维
+				# print(y_hat[0].shape)
+				# print(r[0].shape)
+				# print(torch.cat((y_hat[0], r[0]), dim=0).shape)
+				real_pred = []
+				fake_pred = []
+				for i in range(self.opts.batch_size):
+					fake = self.discriminator(torch.cat((y_hat[0], r[0]), dim=0).unsqueeze(0))
+					real = self.discriminator(torch.cat((y[0], r[0]), dim=0).unsqueeze(0))# 修改x为转换为lab空间的原图y
+					real_pred.append(real)
+					fake_pred.append(fake)
+				# fake = torch.cat((y_hat, r),dim=0)
+				# real = torch.cat((x, r), dim=0)
+				# fake_pred = self.discriminator(fake)
+				# real_pred = self.discriminator(real)
+				loss, loss_dict, id_logs = self.calc_loss(x, y, y_hat, real_pred, fake_pred, False, latent)
+				# 将生成器梯度清零
+				self.discriminator.zero_grad()
+				loss.backward()
+				self.optimizer.step()
+
+				# 训练生成器，经过encoder和合成网络返回生成的图片和latent code
+				for p in self.net.parameters():
+					p.requires_grad = True
+				for p in self.discriminator.parameters():
+					p.requires_grad = False
+				y_hat, latent = self.net.forward(x, r, return_latents=True)
+				fake_pred_g = []
+				for i in range(self.opts.batch_size):
+					fake_g = self.discriminator(torch.cat((y_hat[0], r[0]), dim=0).unsqueeze(0))
+					fake_pred_g.append(fake_g)
+				# fake = torch.cat((y_hat, r), dim=0)
+				loss, loss_dict, id_logs = self.calc_loss(x, y, y_hat, None, fake_pred_g, True, latent)
+				self.net.zero_grad()
 				loss.backward()
 				self.optimizer.step()
 
 				# Logging related
 				if self.global_step % self.opts.image_interval == 0 or (self.global_step < 1000 and self.global_step % 25 == 0):
-					self.parse_and_log_images(id_logs, x, y, y_hat, title='images/train/faces')
+					self.parse_and_log_images(id_logs, x, r, y, y_hat, title='images/train/clothes')
 				if self.global_step % self.opts.board_interval == 0:
 					self.print_metrics(loss_dict, prefix='train')
 					self.log_metrics(loss_dict, prefix='train')
 
 				# Log images of first batch to wandb
 				if self.opts.use_wandb and batch_idx == 0:
-					self.wb_logger.log_images_to_wandb(x, y, y_hat, id_logs, prefix="train", step=self.global_step, opts=self.opts)
+					self.wb_logger.log_images_to_wandb(x, r, y, y_hat, id_logs, prefix="train", step=self.global_step, opts=self.opts)
 
 				# Validation related
 				val_loss_dict = None
@@ -124,26 +180,39 @@ class Coach:
 
 				self.global_step += 1
 
+
 	def validate(self):
 		self.net.eval()
 		agg_loss_dict = []
 		for batch_idx, batch in enumerate(self.test_dataloader):
-			x, y = batch
-
+			x, r, y = batch
+			# print(batch_idx)
 			with torch.no_grad():
-				x, y = x.to(self.device).float(), y.to(self.device).float()
-				y_hat, latent = self.net.forward(x, return_latents=True)
-				loss, cur_loss_dict, id_logs = self.calc_loss(x, y, y_hat, latent)
+				# 增减输入reference
+				x, r, y = x.to(self.device).float(), r.to(self.device).float(), y.to(self.device).float()
+				y_hat, latent = self.net.forward(x, r, return_latents=True)
+				real_pred = []
+				fake_pred = []
+				for i in range(self.opts.batch_size):
+					fake = self.discriminator(torch.cat((y_hat[0], r[0]), dim=0).unsqueeze(0))
+					real = self.discriminator(torch.cat((y[0], r[0]), dim=0).unsqueeze(0))# 修改x为转换为lab空间的原图y
+					real_pred.append(real)
+					fake_pred.append(fake)
+				# fake = torch.cat((y_hat, r),dim=0)
+				# real = torch.cat((x, r), dim=0)# 修改x为真实的图像
+				# fake_pred = self.discriminator(fake)
+				# real_pred = self.discriminator(real)
+				loss, cur_loss_dict, id_logs = self.calc_loss(x, y, y_hat, real_pred , fake_pred, False, latent) #real fake train_g
 			agg_loss_dict.append(cur_loss_dict)
 
 			# Logging related
-			self.parse_and_log_images(id_logs, x, y, y_hat,
-									  title='images/test/faces',
+			self.parse_and_log_images(id_logs, x, r, y, y_hat,
+									  title='images/test/clothes',
 									  subscript='{:04d}'.format(batch_idx))
 
 			# Log images of first batch to wandb
 			if self.opts.use_wandb and batch_idx == 0:
-				self.wb_logger.log_images_to_wandb(x, y, y_hat, id_logs, prefix="test", step=self.global_step, opts=self.opts)
+				self.wb_logger.log_images_to_wandb(x, r, y, y_hat, id_logs, prefix="test", step=self.global_step, opts=self.opts)
 
 			# For first step just do sanity test on small amount of data
 			if self.global_step == 0 and batch_idx >= 4:
@@ -155,8 +224,8 @@ class Coach:
 		self.print_metrics(loss_dict, prefix='test')
 
 		self.net.train()
-		return loss_dict
-
+		return loss_dict		
+	
 	def checkpoint_me(self, loss_dict, is_best):
 		save_name = 'best_model.pt' if is_best else f'iteration_{self.global_step}.pt'
 		save_dict = self.__get_save_dict()
@@ -170,30 +239,38 @@ class Coach:
 			else:
 				f.write(f'Step - {self.global_step}, \n{loss_dict}\n')
 
+	# 在此增加对于判别器的优化器
 	def configure_optimizers(self):
 		params = list(self.net.encoder.parameters())
 		if self.opts.train_decoder:
 			params += list(self.net.decoder.parameters())
+			params += list(self.discriminator.parameters())
 		if self.opts.optim_name == 'adam':
 			optimizer = torch.optim.Adam(params, lr=self.opts.learning_rate)
 		else:
 			optimizer = Ranger(params, lr=self.opts.learning_rate)
 		return optimizer
 
+	# 更换ImagesDataset为自定义的Dataset
 	def configure_datasets(self):
 		if self.opts.dataset_type not in data_configs.DATASETS.keys():
 			Exception(f'{self.opts.dataset_type} is not a valid dataset_type')
 		print(f'Loading dataset for {self.opts.dataset_type}')
 		dataset_args = data_configs.DATASETS[self.opts.dataset_type]
 		transforms_dict = dataset_args['transforms'](self.opts).get_transforms()
-		train_dataset = ImagesDataset(source_root=dataset_args['train_source_root'],
+		# 添加了两个ref参数
+		train_dataset = refDataset(source_root=dataset_args['train_source_root'],
+									  ref_root=dataset_args['train_ref_root'],
 									  target_root=dataset_args['train_target_root'],
 									  source_transform=transforms_dict['transform_source'],
+									  ref_transform=transforms_dict['transform_ref'],
 									  target_transform=transforms_dict['transform_gt_train'],
 									  opts=self.opts)
-		test_dataset = ImagesDataset(source_root=dataset_args['test_source_root'],
+		test_dataset = refDataset(source_root=dataset_args['test_source_root'],
+									 ref_root=dataset_args['test_ref_root'],
 									 target_root=dataset_args['test_target_root'],
 									 source_transform=transforms_dict['transform_source'],
+									 ref_transform=transforms_dict['transform_ref'],
 									 target_transform=transforms_dict['transform_test'],
 									 opts=self.opts)
 		if self.opts.use_wandb:
@@ -202,11 +279,13 @@ class Coach:
 		print(f"Number of training samples: {len(train_dataset)}")
 		print(f"Number of test samples: {len(test_dataset)}")
 		return train_dataset, test_dataset
-
-	def calc_loss(self, x, y, y_hat, latent):
+	
+	# 添加参数判别器输出real, fake对应真实和虚假预测值，是否计算判别器Loss标志位
+	def calc_loss(self, x, y, y_hat, real, fake, train_g, latent):
 		loss_dict = {}
 		loss = 0.0
 		id_logs = None
+		# 修改loss，修改loss_id为计算颜色的loss
 		if self.opts.id_lambda > 0:
 			loss_id, sim_improvement, id_logs = self.id_loss(y_hat, y, x)
 			loss_dict['loss_id'] = float(loss_id)
@@ -237,6 +316,20 @@ class Coach:
 			loss_dict['loss_moco'] = float(loss_moco)
 			loss_dict['id_improve'] = float(sim_improvement)
 			loss += loss_moco * self.opts.moco_lambda
+		# 此处添加对抗损失
+		if self.opts.adv_lambda > 0:
+			loss_adv = self.adv_loss(real, fake, train_g)
+			loss_dict['loss_adv'] = float(loss_adv)
+			loss += loss_adv * self.opts.adv_lambda
+			# if not train_g:
+			# 	loss_adv = self.d_logistic_loss(real, fake)
+			# 	loss_dict['loss_adv'] = float(loss_adv)
+			# 	loss += loss_adv * self.opts.adv_lambda
+			# elif train_g:
+			# 	loss_adv = self.g_nonsaturating_loss(fake)
+			# 	loss_dict['loss_adv'] = float(loss_adv)
+			# 	loss += loss_adv * self.opts.adv_lambda
+				
 
 		loss_dict['loss'] = float(loss)
 		return loss, loss_dict, id_logs
@@ -252,13 +345,18 @@ class Coach:
 		for key, value in metrics_dict.items():
 			print(f'\t{key} = ', value)
 
-	def parse_and_log_images(self, id_logs, x, y, y_hat, title, subscript=None, display_count=2):
+	# 增加参考图像reference
+	def parse_and_log_images(self, id_logs, x, r, y, y_hat, title, subscript=None, display_count=2):
 		im_data = []
+		# print("x:",x[0].shape,"r:",r[0].shape,"y:",y[0].shape,"y_hat:",y_hat[0].shape)
 		for i in range(display_count):
+			# x[i] = torch.squeeze(x[i])
+			# print(x[i].shape)
 			cur_im_data = {
-				'input_face': common.log_input_image(x[i], self.opts),
-				'target_face': common.tensor2im(y[i]),
-				'output_face': common.tensor2im(y_hat[i]),
+				'input_cloth': common.tensor2gray(x[i]),
+				'reference': common.tensor2im(r[i]),
+				'target_cloth': common.tensor2im(y[i]),
+				'output_cloth': common.tensor2im(y_hat[i]),
 			}
 			if id_logs is not None:
 				for key in id_logs[i]:

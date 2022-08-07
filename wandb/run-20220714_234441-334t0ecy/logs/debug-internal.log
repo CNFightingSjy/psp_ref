@@ -1,0 +1,516 @@
+2022-07-14 23:44:42,420 INFO    MainThread:25608 [internal.py:wandb_internal():90] W&B internal server running at pid: 25608, started at: 2022-07-14 23:44:42.419984
+2022-07-14 23:44:42,423 DEBUG   SenderThread:25608 [sender.py:send():234] send: header
+2022-07-14 23:44:42,423 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: check_version
+2022-07-14 23:44:42,423 INFO    WriterThread:25608 [datastore.py:open_for_write():77] open: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/run-334t0ecy.wandb
+2022-07-14 23:44:42,424 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: check_version
+2022-07-14 23:44:44,825 DEBUG   SenderThread:25608 [sender.py:send():234] send: run
+2022-07-14 23:44:46,858 INFO    SenderThread:25608 [dir_watcher.py:__init__():169] watching files in: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files
+2022-07-14 23:44:46,858 INFO    SenderThread:25608 [sender.py:_start_run_threads():807] run started: 334t0ecy with start time 1657813481
+2022-07-14 23:44:46,858 DEBUG   SenderThread:25608 [sender.py:send():234] send: summary
+2022-07-14 23:44:46,859 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file wandb-summary.json with policy end
+2022-07-14 23:44:46,862 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: run_start
+2022-07-14 23:44:47,861 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/wandb-summary.json
+2022-07-14 23:44:48,156 DEBUG   HandlerThread:25608 [meta.py:__init__():40] meta init
+2022-07-14 23:44:48,156 DEBUG   HandlerThread:25608 [meta.py:__init__():54] meta init done
+2022-07-14 23:44:48,156 DEBUG   HandlerThread:25608 [meta.py:probe():214] probe
+2022-07-14 23:44:48,163 DEBUG   HandlerThread:25608 [meta.py:_setup_git():204] setup git
+2022-07-14 23:44:48,208 DEBUG   HandlerThread:25608 [meta.py:_setup_git():211] setup git done
+2022-07-14 23:44:48,209 DEBUG   HandlerThread:25608 [meta.py:_save_pip():58] save pip
+2022-07-14 23:44:48,209 DEBUG   HandlerThread:25608 [meta.py:_save_pip():72] save pip done
+2022-07-14 23:44:48,210 DEBUG   HandlerThread:25608 [meta.py:_save_conda():79] save conda
+2022-07-14 23:44:48,865 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/requirements.txt
+2022-07-14 23:44:48,865 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/conda-environment.yaml
+2022-07-14 23:44:51,533 DEBUG   HandlerThread:25608 [meta.py:_save_conda():89] save conda done
+2022-07-14 23:44:51,533 DEBUG   HandlerThread:25608 [meta.py:probe():252] probe done
+2022-07-14 23:44:51,537 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:51,538 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file wandb-metadata.json with policy now
+2022-07-14 23:44:51,545 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: stop_status
+2022-07-14 23:44:51,546 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: stop_status
+2022-07-14 23:44:51,866 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/conda-environment.yaml
+2022-07-14 23:44:51,867 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/wandb-metadata.json
+2022-07-14 23:44:51,867 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:44:55,905 INFO    Thread-11 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/7qzfn3ex-wandb-metadata.json
+2022-07-14 23:44:57,869 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:44:59,169 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,169 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_0.jpg with policy now
+2022-07-14 23:44:59,170 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,171 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_1.jpg with policy now
+2022-07-14 23:44:59,171 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,172 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_2.jpg with policy now
+2022-07-14 23:44:59,173 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,173 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_3.jpg with policy now
+2022-07-14 23:44:59,174 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,174 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_4.jpg with policy now
+2022-07-14 23:44:59,175 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,175 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_5.jpg with policy now
+2022-07-14 23:44:59,176 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,176 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_6.jpg with policy now
+2022-07-14 23:44:59,177 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,178 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_7.jpg with policy now
+2022-07-14 23:44:59,179 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,179 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_8.jpg with policy now
+2022-07-14 23:44:59,186 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,186 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_9.jpg with policy now
+2022-07-14 23:44:59,186 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,186 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_10.jpg with policy now
+2022-07-14 23:44:59,187 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,187 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_11.jpg with policy now
+2022-07-14 23:44:59,188 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,188 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_12.jpg with policy now
+2022-07-14 23:44:59,189 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,189 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_13.jpg with policy now
+2022-07-14 23:44:59,190 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,190 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_14.jpg with policy now
+2022-07-14 23:44:59,191 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,191 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Train Data Samples_0_15.jpg with policy now
+2022-07-14 23:44:59,207 DEBUG   SenderThread:25608 [sender.py:send():234] send: history
+2022-07-14 23:44:59,207 DEBUG   SenderThread:25608 [sender.py:send():234] send: summary
+2022-07-14 23:44:59,211 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file wandb-summary.json with policy end
+2022-07-14 23:44:59,406 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,406 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_0.jpg with policy now
+2022-07-14 23:44:59,408 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,408 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_1.jpg with policy now
+2022-07-14 23:44:59,410 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,411 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_2.jpg with policy now
+2022-07-14 23:44:59,412 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,412 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_3.jpg with policy now
+2022-07-14 23:44:59,414 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,414 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_4.jpg with policy now
+2022-07-14 23:44:59,422 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,422 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_5.jpg with policy now
+2022-07-14 23:44:59,423 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,423 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_6.jpg with policy now
+2022-07-14 23:44:59,424 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,424 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_7.jpg with policy now
+2022-07-14 23:44:59,426 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,426 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_8.jpg with policy now
+2022-07-14 23:44:59,427 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,427 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_9.jpg with policy now
+2022-07-14 23:44:59,434 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,435 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_10.jpg with policy now
+2022-07-14 23:44:59,436 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,436 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_11.jpg with policy now
+2022-07-14 23:44:59,437 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,437 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_12.jpg with policy now
+2022-07-14 23:44:59,438 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,439 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_13.jpg with policy now
+2022-07-14 23:44:59,446 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,447 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_14.jpg with policy now
+2022-07-14 23:44:59,448 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:44:59,448 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/images/Test Data Samples_1_15.jpg with policy now
+2022-07-14 23:44:59,450 DEBUG   SenderThread:25608 [sender.py:send():234] send: history
+2022-07-14 23:44:59,450 DEBUG   SenderThread:25608 [sender.py:send():234] send: summary
+2022-07-14 23:44:59,451 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file wandb-summary.json with policy end
+2022-07-14 23:44:59,871 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/wandb-summary.json
+2022-07-14 23:44:59,872 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:44:59,872 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_7.jpg
+2022-07-14 23:44:59,872 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_5.jpg
+2022-07-14 23:44:59,872 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_11.jpg
+2022-07-14 23:44:59,873 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_13.jpg
+2022-07-14 23:44:59,873 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_15.jpg
+2022-07-14 23:44:59,873 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_14.jpg
+2022-07-14 23:44:59,874 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_4.jpg
+2022-07-14 23:44:59,874 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_7.jpg
+2022-07-14 23:44:59,874 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_0.jpg
+2022-07-14 23:44:59,874 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_11.jpg
+2022-07-14 23:44:59,875 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_2.jpg
+2022-07-14 23:44:59,875 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_6.jpg
+2022-07-14 23:44:59,875 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_9.jpg
+2022-07-14 23:44:59,875 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_8.jpg
+2022-07-14 23:44:59,876 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_0.jpg
+2022-07-14 23:44:59,876 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_15.jpg
+2022-07-14 23:44:59,876 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_10.jpg
+2022-07-14 23:44:59,876 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_3.jpg
+2022-07-14 23:44:59,876 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_4.jpg
+2022-07-14 23:44:59,877 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_2.jpg
+2022-07-14 23:44:59,877 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_1.jpg
+2022-07-14 23:44:59,877 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_8.jpg
+2022-07-14 23:44:59,877 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_1.jpg
+2022-07-14 23:44:59,878 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_14.jpg
+2022-07-14 23:44:59,878 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_5.jpg
+2022-07-14 23:44:59,878 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_10.jpg
+2022-07-14 23:44:59,878 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_12.jpg
+2022-07-14 23:44:59,878 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_3.jpg
+2022-07-14 23:44:59,879 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_13.jpg
+2022-07-14 23:44:59,879 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_9.jpg
+2022-07-14 23:44:59,879 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_12.jpg
+2022-07-14 23:44:59,879 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_6.jpg
+2022-07-14 23:44:59,879 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media
+2022-07-14 23:44:59,880 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images
+2022-07-14 23:45:01,610 INFO    Thread-19 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/26dlqkk4-media/images/Train Data Samples_0_7.jpg
+2022-07-14 23:45:01,653 INFO    Thread-21 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/8vak3254-media/images/Train Data Samples_0_9.jpg
+2022-07-14 23:45:01,804 INFO    Thread-30 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/2tpkh395-media/images/Test Data Samples_1_2.jpg
+2022-07-14 23:45:01,823 INFO    Thread-33 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/13tfr3si-media/images/Test Data Samples_1_5.jpg
+2022-07-14 23:45:01,873 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:45:01,880 INFO    Thread-34 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/31qmergt-media/images/Test Data Samples_1_6.jpg
+2022-07-14 23:45:01,882 INFO    Thread-16 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/9umy6qze-media/images/Train Data Samples_0_4.jpg
+2022-07-14 23:45:01,890 INFO    Thread-14 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/3gsfoj1d-media/images/Train Data Samples_0_2.jpg
+2022-07-14 23:45:01,991 INFO    Thread-42 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/3a9x198x-media/images/Test Data Samples_1_14.jpg
+2022-07-14 23:45:02,037 INFO    Thread-32 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/3ravx965-media/images/Test Data Samples_1_4.jpg
+2022-07-14 23:45:02,173 INFO    Thread-22 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/3kgd6u87-media/images/Train Data Samples_0_10.jpg
+2022-07-14 23:45:02,229 INFO    Thread-38 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/92uhv458-media/images/Test Data Samples_1_10.jpg
+2022-07-14 23:45:02,264 INFO    Thread-41 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/18zrfhwu-media/images/Test Data Samples_1_13.jpg
+2022-07-14 23:45:02,287 INFO    Thread-25 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/1tog4eyb-media/images/Train Data Samples_0_13.jpg
+2022-07-14 23:45:02,416 INFO    Thread-12 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/46ubsgwu-media/images/Train Data Samples_0_0.jpg
+2022-07-14 23:45:02,488 INFO    Thread-39 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/22ycgylg-media/images/Test Data Samples_1_11.jpg
+2022-07-14 23:45:02,504 INFO    Thread-18 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/zsnns01i-media/images/Train Data Samples_0_6.jpg
+2022-07-14 23:45:02,528 INFO    Thread-27 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/2g3uil5k-media/images/Train Data Samples_0_15.jpg
+2022-07-14 23:45:02,568 INFO    Thread-13 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/3uqfkcue-media/images/Train Data Samples_0_1.jpg
+2022-07-14 23:45:02,599 INFO    Thread-43 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/1dl187c7-media/images/Test Data Samples_1_15.jpg
+2022-07-14 23:45:02,742 INFO    Thread-31 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/1eny109u-media/images/Test Data Samples_1_3.jpg
+2022-07-14 23:45:02,750 INFO    Thread-29 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/ky1p2scq-media/images/Test Data Samples_1_1.jpg
+2022-07-14 23:45:02,769 INFO    Thread-40 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/12lrksrt-media/images/Test Data Samples_1_12.jpg
+2022-07-14 23:45:03,075 INFO    Thread-23 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/3nqcplbp-media/images/Train Data Samples_0_11.jpg
+2022-07-14 23:45:03,091 INFO    Thread-20 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/3jc94y3g-media/images/Train Data Samples_0_8.jpg
+2022-07-14 23:45:03,180 INFO    Thread-17 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/xeytkngu-media/images/Train Data Samples_0_5.jpg
+2022-07-14 23:45:03,409 INFO    Thread-24 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/1y1vb4j8-media/images/Train Data Samples_0_12.jpg
+2022-07-14 23:45:03,589 DEBUG   SenderThread:25608 [sender.py:send():234] send: history
+2022-07-14 23:45:03,590 DEBUG   SenderThread:25608 [sender.py:send():234] send: summary
+2022-07-14 23:45:03,591 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file wandb-summary.json with policy end
+2022-07-14 23:45:03,638 INFO    Thread-35 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/zerccdb6-media/images/Test Data Samples_1_7.jpg
+2022-07-14 23:45:03,758 INFO    Thread-26 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/2auxxco0-media/images/Train Data Samples_0_14.jpg
+2022-07-14 23:45:03,874 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/wandb-summary.json
+2022-07-14 23:45:03,875 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:45:03,902 INFO    Thread-15 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/32yai158-media/images/Train Data Samples_0_3.jpg
+2022-07-14 23:45:03,921 INFO    Thread-36 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/3lw77ii9-media/images/Test Data Samples_1_8.jpg
+2022-07-14 23:45:04,332 INFO    Thread-28 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/1yhew93b-media/images/Test Data Samples_1_0.jpg
+2022-07-14 23:45:04,687 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: log_artifact
+2022-07-14 23:45:04,687 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: log_artifact
+2022-07-14 23:45:04,875 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/table/Train Step 0 Output Samples_3_6552feebe3e4cf21f474.table.json
+2022-07-14 23:45:04,877 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media
+2022-07-14 23:45:04,877 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/table
+2022-07-14 23:45:05,576 INFO    Thread-37 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/2oe1j53k-media/images/Test Data Samples_1_9.jpg
+2022-07-14 23:45:05,877 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:45:09,882 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:45:10,602 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: stop_status
+2022-07-14 23:45:11,606 INFO    Thread-45 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/eb/a25295cbae5f3fb29b80ae28cae404
+2022-07-14 23:45:11,826 INFO    Thread-51 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/d0/7e8b83d08530a256917115e949ff07
+2022-07-14 23:45:11,871 INFO    Thread-46 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/28/dd74b074a3c079e53cd53104e22ab5
+2022-07-14 23:45:11,872 INFO    Thread-53 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/f3/ed89f531837421b093d8e7bd82893b
+2022-07-14 23:45:12,057 INFO    Thread-48 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/77/9b18be200b03ec32b1a0e4e8b9ffb4
+2022-07-14 23:45:12,712 INFO    Thread-49 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/94/da9c661940f188bec8c63f5aedfc24
+2022-07-14 23:45:13,014 INFO    Thread-50 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/ab/2ea312edf5e504dbb20e7c01d4abf7
+2022-07-14 23:45:13,323 INFO    Thread-47 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/46/f811996f43e96fdec4994cf2f8b076
+2022-07-14 23:45:13,449 INFO    Thread-52 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/e2/3f8066b84517ee43636073f89512a5
+2022-07-14 23:45:17,891 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:45:18,566 INFO    SenderThread:25608 [sender.py:send_request_log_artifact():968] logged artifact run-334t0ecy-TrainStep0OutputSamples - {'id': 'QXJ0aWZhY3Q6MTU4MzU0NDc2', 'digest': 'c0ab90a04345a73b575aecf9676aad96', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjI0MjAzMTg0', 'latestArtifact': None}, 'version': 'latest'}
+2022-07-14 23:45:18,566 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:45:18,567 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/table/Train Step 0 Output Samples_3_6552feebe3e4cf21f474.table.json with policy now
+2022-07-14 23:45:18,568 DEBUG   SenderThread:25608 [sender.py:send():234] send: history
+2022-07-14 23:45:18,572 DEBUG   SenderThread:25608 [sender.py:send():234] send: summary
+2022-07-14 23:45:18,573 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file wandb-summary.json with policy end
+2022-07-14 23:45:18,573 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: stop_status
+2022-07-14 23:45:18,892 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/wandb-summary.json
+2022-07-14 23:45:19,846 DEBUG   SenderThread:25608 [sender.py:send():234] send: stats
+2022-07-14 23:45:19,893 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:45:21,381 INFO    Thread-54 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/427d4syt-media/table/Train Step 0 Output Samples_3_6552feebe3e4cf21f474.table.json
+2022-07-14 23:45:21,895 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:45:23,897 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:45:25,826 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: log_artifact
+2022-07-14 23:45:25,827 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: log_artifact
+2022-07-14 23:45:25,900 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:45:25,900 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_created():217] file/dir created: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/table/Test Step 0 Output Samples_4_fb3f1bcc17dbc6e53b7c.table.json
+2022-07-14 23:45:25,901 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/table
+2022-07-14 23:45:29,904 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:45:30,604 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: stop_status
+2022-07-14 23:45:31,907 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:45:33,909 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:45:36,363 INFO    Thread-56 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/2e/ba71b63a2b428deef797dfea1e18b7
+2022-07-14 23:45:36,375 INFO    Thread-61 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/a3/46a675f441108df84081820a388ac7
+2022-07-14 23:45:36,383 INFO    Thread-60 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/51/a1886a77be3826a14fbc5b9862af92
+2022-07-14 23:45:36,611 INFO    Thread-63 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/c3/bd910bb57763b78effe00d4f5567bb
+2022-07-14 23:45:36,625 INFO    Thread-58 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/38/c388cdf1c6b0411cbb6cc843dad49c
+2022-07-14 23:45:37,107 INFO    Thread-59 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/4c/1aef8f982f370edba963c4ef80c1ee
+2022-07-14 23:45:38,104 INFO    Thread-62 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/a8/b09ea48ea3e2c1958feb99a1c2359f
+2022-07-14 23:45:38,128 INFO    Thread-64 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/e5/fe9d0ef6a03e9ce9e1523354cba258
+2022-07-14 23:45:38,820 INFO    Thread-57 :25608 [upload_job.py:push():95] Uploaded file /home/shijianyang/.cache/wandb/artifacts/obj/md5/1f/71e148dec94902d1490ec8d7a726bb
+2022-07-14 23:45:43,923 INFO    SenderThread:25608 [sender.py:send_request_log_artifact():968] logged artifact run-334t0ecy-TestStep0OutputSamples - {'id': 'QXJ0aWZhY3Q6MTU4MzU0NTc0', 'digest': '6a8c929ddc4e4501deff48afb498b2ae', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjI0MjAzMTk4', 'latestArtifact': None}, 'version': 'latest'}
+2022-07-14 23:45:43,923 DEBUG   SenderThread:25608 [sender.py:send():234] send: files
+2022-07-14 23:45:43,924 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file media/table/Test Step 0 Output Samples_4_fb3f1bcc17dbc6e53b7c.table.json with policy now
+2022-07-14 23:45:43,925 DEBUG   SenderThread:25608 [sender.py:send():234] send: history
+2022-07-14 23:45:43,926 DEBUG   SenderThread:25608 [sender.py:send():234] send: summary
+2022-07-14 23:45:43,930 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file wandb-summary.json with policy end
+2022-07-14 23:45:43,931 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: stop_status
+2022-07-14 23:45:44,943 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/wandb-summary.json
+2022-07-14 23:45:47,315 DEBUG   SenderThread:25608 [sender.py:send():234] send: stats
+2022-07-14 23:45:47,949 INFO    Thread-65 :25608 [upload_job.py:push():137] Uploaded file /tmp/tmp0gadv50xwandb/11m81y5a-media/table/Test Step 0 Output Samples_4_fb3f1bcc17dbc6e53b7c.table.json
+2022-07-14 23:45:50,604 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: stop_status
+2022-07-14 23:45:50,604 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: stop_status
+2022-07-14 23:46:07,810 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: stop_status
+2022-07-14 23:46:07,811 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: stop_status
+2022-07-14 23:46:17,918 DEBUG   SenderThread:25608 [sender.py:send():234] send: stats
+2022-07-14 23:46:23,813 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: stop_status
+2022-07-14 23:46:23,814 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: stop_status
+2022-07-14 23:46:34,000 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:46:36,003 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:46:38,006 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:46:39,833 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: stop_status
+2022-07-14 23:46:39,834 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: stop_status
+2022-07-14 23:46:40,008 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:46:42,011 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:46:44,013 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:46:46,016 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:46:48,019 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:46:48,489 DEBUG   SenderThread:25608 [sender.py:send():234] send: stats
+2022-07-14 23:46:50,021 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:46:52,024 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:46:54,027 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:46:56,029 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:46:56,111 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: stop_status
+2022-07-14 23:46:56,112 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: stop_status
+2022-07-14 23:46:58,032 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:00,035 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:02,037 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:04,040 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:06,042 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:08,045 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:10,047 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:12,050 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:13,073 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: stop_status
+2022-07-14 23:47:13,073 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: stop_status
+2022-07-14 23:47:14,053 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:16,055 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:19,101 DEBUG   SenderThread:25608 [sender.py:send():234] send: stats
+2022-07-14 23:47:24,065 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:26,068 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:26,429 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:26,429 DEBUG   SenderThread:25608 [sender.py:send():234] send: telemetry
+2022-07-14 23:47:26,429 DEBUG   SenderThread:25608 [sender.py:send():234] send: exit
+2022-07-14 23:47:26,429 INFO    SenderThread:25608 [sender.py:send_exit():366] handling exit code: 1
+2022-07-14 23:47:26,430 INFO    SenderThread:25608 [sender.py:send_exit():368] handling runtime: 159
+2022-07-14 23:47:26,431 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file wandb-summary.json with policy end
+2022-07-14 23:47:26,431 INFO    SenderThread:25608 [sender.py:send_exit():374] send defer
+2022-07-14 23:47:26,431 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:26,432 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: defer
+2022-07-14 23:47:26,432 INFO    HandlerThread:25608 [handler.py:handle_request_defer():147] handle defer: 0
+2022-07-14 23:47:26,433 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: defer
+2022-07-14 23:47:26,433 INFO    SenderThread:25608 [sender.py:send_request_defer():383] handle sender defer: 0
+2022-07-14 23:47:26,433 INFO    SenderThread:25608 [sender.py:transition_state():387] send defer: 1
+2022-07-14 23:47:26,433 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: defer
+2022-07-14 23:47:26,434 INFO    HandlerThread:25608 [handler.py:handle_request_defer():147] handle defer: 1
+2022-07-14 23:47:26,537 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: defer
+2022-07-14 23:47:26,537 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:26,537 INFO    SenderThread:25608 [sender.py:send_request_defer():383] handle sender defer: 1
+2022-07-14 23:47:26,538 INFO    SenderThread:25608 [sender.py:transition_state():387] send defer: 2
+2022-07-14 23:47:26,538 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:26,539 DEBUG   SenderThread:25608 [sender.py:send():234] send: stats
+2022-07-14 23:47:26,539 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: defer
+2022-07-14 23:47:26,540 INFO    HandlerThread:25608 [handler.py:handle_request_defer():147] handle defer: 2
+2022-07-14 23:47:26,540 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: defer
+2022-07-14 23:47:26,540 INFO    SenderThread:25608 [sender.py:send_request_defer():383] handle sender defer: 2
+2022-07-14 23:47:26,540 INFO    SenderThread:25608 [sender.py:transition_state():387] send defer: 3
+2022-07-14 23:47:26,541 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: defer
+2022-07-14 23:47:26,541 INFO    HandlerThread:25608 [handler.py:handle_request_defer():147] handle defer: 3
+2022-07-14 23:47:26,541 DEBUG   SenderThread:25608 [sender.py:send():234] send: summary
+2022-07-14 23:47:26,542 INFO    SenderThread:25608 [sender.py:_save_file():939] saving file wandb-summary.json with policy end
+2022-07-14 23:47:26,542 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: defer
+2022-07-14 23:47:26,543 INFO    SenderThread:25608 [sender.py:send_request_defer():383] handle sender defer: 3
+2022-07-14 23:47:26,543 INFO    SenderThread:25608 [sender.py:transition_state():387] send defer: 4
+2022-07-14 23:47:26,543 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: defer
+2022-07-14 23:47:26,543 INFO    HandlerThread:25608 [handler.py:handle_request_defer():147] handle defer: 4
+2022-07-14 23:47:26,543 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: defer
+2022-07-14 23:47:26,544 INFO    SenderThread:25608 [sender.py:send_request_defer():383] handle sender defer: 4
+2022-07-14 23:47:26,641 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:27,069 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/wandb-summary.json
+2022-07-14 23:47:27,070 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:27,543 INFO    SenderThread:25608 [sender.py:transition_state():387] send defer: 5
+2022-07-14 23:47:27,543 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:27,544 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: defer
+2022-07-14 23:47:27,544 INFO    HandlerThread:25608 [handler.py:handle_request_defer():147] handle defer: 5
+2022-07-14 23:47:27,544 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: defer
+2022-07-14 23:47:27,544 INFO    SenderThread:25608 [sender.py:send_request_defer():383] handle sender defer: 5
+2022-07-14 23:47:27,545 INFO    SenderThread:25608 [dir_watcher.py:finish():283] shutting down directory watcher
+2022-07-14 23:47:27,646 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:28,070 INFO    Thread-8  :25608 [dir_watcher.py:_on_file_modified():230] file/dir modified: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/config.yaml
+2022-07-14 23:47:28,073 INFO    SenderThread:25608 [dir_watcher.py:finish():313] scan: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files
+2022-07-14 23:47:28,073 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log output.log
+2022-07-14 23:47:28,073 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/conda-environment.yaml conda-environment.yaml
+2022-07-14 23:47:28,073 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/wandb-metadata.json wandb-metadata.json
+2022-07-14 23:47:28,074 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/wandb-summary.json wandb-summary.json
+2022-07-14 23:47:28,086 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/config.yaml config.yaml
+2022-07-14 23:47:28,087 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/requirements.txt requirements.txt
+2022-07-14 23:47:28,107 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/table/Test Step 0 Output Samples_4_fb3f1bcc17dbc6e53b7c.table.json media/table/Test Step 0 Output Samples_4_fb3f1bcc17dbc6e53b7c.table.json
+2022-07-14 23:47:28,108 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/table/Train Step 0 Output Samples_3_6552feebe3e4cf21f474.table.json media/table/Train Step 0 Output Samples_3_6552feebe3e4cf21f474.table.json
+2022-07-14 23:47:28,108 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_5.jpg media/images/Test Data Samples_1_5.jpg
+2022-07-14 23:47:28,108 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_12.jpg media/images/Train Data Samples_0_12.jpg
+2022-07-14 23:47:28,108 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_8.jpg media/images/Test Data Samples_1_8.jpg
+2022-07-14 23:47:28,109 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_15.jpg media/images/Train Data Samples_0_15.jpg
+2022-07-14 23:47:28,109 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_14.jpg media/images/Train Data Samples_0_14.jpg
+2022-07-14 23:47:28,109 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_2.jpg media/images/Test Data Samples_1_2.jpg
+2022-07-14 23:47:28,109 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_9.jpg media/images/Test Data Samples_1_9.jpg
+2022-07-14 23:47:28,109 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_10.jpg media/images/Train Data Samples_0_10.jpg
+2022-07-14 23:47:28,110 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_6.jpg media/images/Test Data Samples_1_6.jpg
+2022-07-14 23:47:28,110 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_5.jpg media/images/Train Data Samples_0_5.jpg
+2022-07-14 23:47:28,110 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_1.jpg media/images/Train Data Samples_0_1.jpg
+2022-07-14 23:47:28,110 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_1.jpg media/images/Test Data Samples_1_1.jpg
+2022-07-14 23:47:28,110 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_11.jpg media/images/Test Data Samples_1_11.jpg
+2022-07-14 23:47:28,110 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_4.jpg media/images/Train Data Samples_0_4.jpg
+2022-07-14 23:47:28,110 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_3.jpg media/images/Test Data Samples_1_3.jpg
+2022-07-14 23:47:28,110 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_0.jpg media/images/Test Data Samples_1_0.jpg
+2022-07-14 23:47:28,110 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_6.jpg media/images/Train Data Samples_0_6.jpg
+2022-07-14 23:47:28,111 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_0.jpg media/images/Train Data Samples_0_0.jpg
+2022-07-14 23:47:28,111 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_8.jpg media/images/Train Data Samples_0_8.jpg
+2022-07-14 23:47:28,111 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_14.jpg media/images/Test Data Samples_1_14.jpg
+2022-07-14 23:47:28,111 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_7.jpg media/images/Test Data Samples_1_7.jpg
+2022-07-14 23:47:28,111 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_11.jpg media/images/Train Data Samples_0_11.jpg
+2022-07-14 23:47:28,111 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_4.jpg media/images/Test Data Samples_1_4.jpg
+2022-07-14 23:47:28,111 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_10.jpg media/images/Test Data Samples_1_10.jpg
+2022-07-14 23:47:28,111 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_12.jpg media/images/Test Data Samples_1_12.jpg
+2022-07-14 23:47:28,112 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_9.jpg media/images/Train Data Samples_0_9.jpg
+2022-07-14 23:47:28,112 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_15.jpg media/images/Test Data Samples_1_15.jpg
+2022-07-14 23:47:28,112 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_13.jpg media/images/Train Data Samples_0_13.jpg
+2022-07-14 23:47:28,112 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_3.jpg media/images/Train Data Samples_0_3.jpg
+2022-07-14 23:47:28,112 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_7.jpg media/images/Train Data Samples_0_7.jpg
+2022-07-14 23:47:28,112 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Test Data Samples_1_13.jpg media/images/Test Data Samples_1_13.jpg
+2022-07-14 23:47:28,112 INFO    SenderThread:25608 [dir_watcher.py:finish():327] scan save: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/media/images/Train Data Samples_0_2.jpg media/images/Train Data Samples_0_2.jpg
+2022-07-14 23:47:28,112 INFO    SenderThread:25608 [sender.py:transition_state():387] send defer: 6
+2022-07-14 23:47:28,112 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:28,113 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: defer
+2022-07-14 23:47:28,113 INFO    HandlerThread:25608 [handler.py:handle_request_defer():147] handle defer: 6
+2022-07-14 23:47:28,113 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: defer
+2022-07-14 23:47:28,113 INFO    SenderThread:25608 [sender.py:send_request_defer():383] handle sender defer: 6
+2022-07-14 23:47:28,113 INFO    SenderThread:25608 [file_pusher.py:finish():177] shutting down file pusher
+2022-07-14 23:47:28,215 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:28,215 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:28,318 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:28,318 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:28,421 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:28,422 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:28,524 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:28,525 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:28,627 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:28,627 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:28,730 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:28,730 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:28,833 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:28,833 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:28,936 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:28,936 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:29,039 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:29,039 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:29,142 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:29,142 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:29,245 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:29,245 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:29,347 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:29,348 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:29,453 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:29,454 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:29,556 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:29,557 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:29,659 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:29,660 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:29,762 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:29,763 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:29,865 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:29,865 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:29,968 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:29,968 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:30,071 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:30,071 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:30,173 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:30,174 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:30,276 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:30,277 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:30,379 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:30,379 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:30,482 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:30,482 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:30,585 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:30,585 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:30,688 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:30,688 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:30,790 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:30,791 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:30,893 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:30,893 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:30,996 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:30,996 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:31,098 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:31,099 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:31,201 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:31,201 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:31,304 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:31,304 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:31,407 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:31,407 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:31,505 INFO    Thread-68 :25608 [upload_job.py:push():137] Uploaded file /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/wandb-summary.json
+2022-07-14 23:47:31,509 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:31,510 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:31,520 INFO    Thread-69 :25608 [upload_job.py:push():137] Uploaded file /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/config.yaml
+2022-07-14 23:47:31,612 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:31,612 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:31,715 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:31,715 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:31,817 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:31,818 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:31,920 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:31,920 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:32,023 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:32,023 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:32,126 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:32,126 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:32,135 INFO    Thread-70 :25608 [upload_job.py:push():137] Uploaded file /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/requirements.txt
+2022-07-14 23:47:32,228 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:32,229 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:32,331 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:32,331 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:32,434 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:32,434 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:32,536 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:32,537 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:32,608 INFO    Thread-66 :25608 [upload_job.py:push():137] Uploaded file /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/output.log
+2022-07-14 23:47:32,639 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:32,640 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:32,742 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:32,742 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:32,845 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:32,845 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:32,947 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:32,948 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:33,050 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:33,051 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:33,153 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:33,153 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:33,256 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:33,256 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:33,359 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:33,360 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:33,462 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:33,462 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:33,562 INFO    Thread-67 :25608 [upload_job.py:push():137] Uploaded file /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/files/conda-environment.yaml
+2022-07-14 23:47:33,565 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:33,565 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:33,668 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:33,668 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:33,763 INFO    Thread-7  :25608 [sender.py:transition_state():387] send defer: 7
+2022-07-14 23:47:33,764 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: defer
+2022-07-14 23:47:33,764 INFO    HandlerThread:25608 [handler.py:handle_request_defer():147] handle defer: 7
+2022-07-14 23:47:33,765 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: defer
+2022-07-14 23:47:33,765 INFO    SenderThread:25608 [sender.py:send_request_defer():383] handle sender defer: 7
+2022-07-14 23:47:33,771 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:34,856 INFO    SenderThread:25608 [sender.py:transition_state():387] send defer: 8
+2022-07-14 23:47:34,856 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:34,858 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: defer
+2022-07-14 23:47:34,858 INFO    HandlerThread:25608 [handler.py:handle_request_defer():147] handle defer: 8
+2022-07-14 23:47:34,858 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: defer
+2022-07-14 23:47:34,858 INFO    SenderThread:25608 [sender.py:send_request_defer():383] handle sender defer: 8
+2022-07-14 23:47:34,858 INFO    SenderThread:25608 [sender.py:transition_state():387] send defer: 9
+2022-07-14 23:47:34,860 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: defer
+2022-07-14 23:47:34,860 DEBUG   SenderThread:25608 [sender.py:send():234] send: final
+2022-07-14 23:47:34,860 INFO    HandlerThread:25608 [handler.py:handle_request_defer():147] handle defer: 9
+2022-07-14 23:47:34,860 DEBUG   SenderThread:25608 [sender.py:send():234] send: footer
+2022-07-14 23:47:34,860 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: defer
+2022-07-14 23:47:34,861 INFO    SenderThread:25608 [sender.py:send_request_defer():383] handle sender defer: 9
+2022-07-14 23:47:34,960 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: poll_exit
+2022-07-14 23:47:34,960 DEBUG   SenderThread:25608 [sender.py:send_request():248] send_request: poll_exit
+2022-07-14 23:47:34,960 INFO    SenderThread:25608 [file_pusher.py:join():182] waiting for file pusher
+2022-07-14 23:47:36,974 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: get_summary
+2022-07-14 23:47:36,976 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: sampled_history
+2022-07-14 23:47:36,978 DEBUG   HandlerThread:25608 [handler.py:handle_request():130] handle_request: shutdown
+2022-07-14 23:47:36,979 INFO    HandlerThread:25608 [handler.py:finish():731] shutting down handler
+2022-07-14 23:47:37,860 INFO    WriterThread:25608 [datastore.py:close():281] close: /data/shijianyang/code/pixel2style2pixel/wandb/run-20220714_234441-334t0ecy/run-334t0ecy.wandb
+2022-07-14 23:47:37,972 INFO    SenderThread:25608 [sender.py:finish():1070] shutting down sender
+2022-07-14 23:47:37,972 INFO    SenderThread:25608 [file_pusher.py:finish():177] shutting down file pusher
+2022-07-14 23:47:37,972 INFO    SenderThread:25608 [file_pusher.py:join():182] waiting for file pusher
+2022-07-14 23:47:37,973 INFO    MainThread:25608 [internal.py:handle_exit():77] Internal process exited

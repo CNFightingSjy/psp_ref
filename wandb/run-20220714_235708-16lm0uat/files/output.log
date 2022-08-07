@@ -1,0 +1,31 @@
+
+Loading encoders weights from irse50!
+Loading decoder weights from pretrained!
+Loading MOCO model from path: pretrained_models/moco_v2_800ep_pretrain.pt
+Loading dataset for cloth_encode
+Number of training samples: 14000
+Number of test samples: 4000
+/data/shijianyang/code/pixel2style2pixel/training/ranger.py:123: UserWarning: This overload of addcmul_ is deprecated:
+	addcmul_(Number value, Tensor tensor1, Tensor tensor2)
+Consider using one of the following signatures instead:
+	addcmul_(Tensor tensor1, Tensor tensor2, *, Number value) (Triggered internally at  /opt/conda/conda-bld/pytorch_1616554800319/work/torch/csrc/utils/python_arg_parser.cpp:1005.)
+  exp_avg_sq.mul_(beta2).addcmul_(1 - beta2, grad, grad)
+Metrics for train, step 0
+	loss_l2 =  0.27875059843063354
+	loss_lpips =  0.7888960838317871
+	loss_moco =  0.6392958164215088
+	id_improve =  -0.47184836864471436
+	loss_adv =  0.3465735912322998
+	loss =  1.3203706741333008
+Traceback (most recent call last):
+  File "training/train.py", line 32, in <module>
+    main()
+  File "training/train.py", line 28, in main
+    coach.train()
+  File "./training/coach.py", line 149, in train
+    loss.backward()
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/tensor.py", line 245, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/home/shijianyang/anaconda3/envs/py37torch18/lib/python3.7/site-packages/torch/autograd/__init__.py", line 147, in backward
+    allow_unreachable=True, accumulate_grad=True)  # allow_unreachable flag
+RuntimeError: CUDA error: an illegal memory access was encountered
