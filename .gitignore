@@ -1,5 +1,6 @@
 __MACOSX/
 pretrained_models/
 path/
+wandb/
 
 *.zip
