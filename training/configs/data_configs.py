@@ -7,10 +7,10 @@ DATASETS = {
 		'transforms': transforms_config.EncodeTransforms,
 		'train_source_root': dataset_paths['cloth'],
 		'train_ref_root': dataset_paths['reference'],
-		'train_target_root': dataset_paths['cloth'],
+		'train_target_root': dataset_paths['cloth_train_target'],
 		'test_source_root': dataset_paths['cloth_test'],
 		'test_ref_root': dataset_paths['reference_test'],
-		'test_target_root': dataset_paths['cloth_test'],
+		'test_target_root': dataset_paths['cloth_test_target'],
 	},
 	'ffhq_encode': {
 		'transforms': transforms_config.EncodeTransforms,

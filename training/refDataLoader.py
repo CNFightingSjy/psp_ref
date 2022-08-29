@@ -37,6 +37,10 @@ class refDataset(Dataset):
 
         ref_path = self.ref_paths[index]
         ref_im = Image.open(ref_path).convert('RGB')
+        # 针对skech+部分纹理生成添加
+        ref_im = np.array(ref_im)
+        ref_im = ref_im[75:175,75:175,:]
+        ref_im = Image.fromarray(ref_im)
         # 将ref转到ab通道
         # ref_im = cv2.imread(ref_path)
         # ref_im = cv2.cvtColor(ref_im, cv2.COLOR_BGR2RGB)

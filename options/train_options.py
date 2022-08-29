@@ -17,6 +17,7 @@ class TrainOptions:
 		self.parser.add_argument('--label_nc', default=0, type=int, help='Number of input label channels to the psp encoder')
 		self.parser.add_argument('--output_size', default=1024, type=int, help='Output size of generator')
 		self.parser.add_argument('--channel_multiplier', default=2, type=int, help='channel multiplier factor for the model. config-f = 2, else = 1')
+		self.parser.add_argument('--size', default=256, type=int, help='input size for discriminator')
 
 		self.parser.add_argument('--batch_size', default=4, type=int, help='Batch size for training')
 		self.parser.add_argument('--test_batch_size', default=2, type=int, help='Batch size for testing and inference')
@@ -37,6 +38,7 @@ class TrainOptions:
 		self.parser.add_argument('--l2_lambda_crop', default=0, type=float, help='L2 loss multiplier factor for inner image region')
 		self.parser.add_argument('--moco_lambda', default=0, type=float, help='Moco-based feature similarity loss multiplier factor')
 		self.parser.add_argument('--adv_lambda', default=1.0, type=float, help='adversarial loss multiplier factor')
+		self.parser.add_argument('--l_image', default=0.7, type=float, help='sketch loss multiplier factor')
 		
 		self.parser.add_argument('--stylegan_weights', default=model_paths['stylegan_ffhq'], type=str, help='Path to StyleGAN model weights')
 		self.parser.add_argument('--checkpoint_path', default=None, type=str, help='Path to pSp model checkpoint')
@@ -47,6 +49,17 @@ class TrainOptions:
 		self.parser.add_argument('--val_interval', default=1000, type=int, help='Validation interval')
 		self.parser.add_argument('--save_interval', default=None, type=int, help='Model checkpoint interval')
 
+		# arguments for sketchGAN
+		self.parser.add_argument("--g_pretrained", type=str, default="", help="path to the pre-trained generator")
+		self.parser.add_argument("--d_pretrained", type=str, default="", help="path to the pre-trained discriminator")
+		self.parser.add_argument('--dataroot_image', type=str, default=None, help="root to the image dataset for image regularization")
+		self.parser.add_argument("--transform_real", type=str, default='to3ch', help="sequence of operations to transform the real sketches before D")
+		self.parser.add_argument("--transform_fake", type=str, default='toSketch,to3ch', help="sequence of operations to transform the fake images before D")
+		self.parser.add_argument("--photosketch_path", type=str, default='./pretrained_models/photosketch.pth', help="path to the photosketch pre-trained model")
+		self.parser.add_argument("--diffaug_policy", type=str, default='', help='sequence of operations used for differentiable augmentation')
+		self.parser.add_argument("--gan_mode", type=str, default="softplus", help="which gan loss to use? [ls|original|w|hinge|softplus]")
+
+		
 		# arguments for weights & biases support
 		self.parser.add_argument('--use_wandb', action="store_true", help='Whether to use Weights & Biases to track experiment.')
 

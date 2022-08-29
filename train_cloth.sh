@@ -2,7 +2,8 @@ CUDA_VISIBLE_DEVICES=1 python training/train.py \
 --input_nc=1 \
 --ref_input_nc=3 \
 --dataset_type=cloth_encode \
---exp_dir=/data/shijianyang/code/pixel2style2pixel/path/to/experiment_sketch2d \
+--dataroot_image=/data/shijianyang/data/sketchGAN_data/psp4color/train/upper \
+--exp_dir=/data/shijianyang/code/pixel2style2pixel/path/to/experiment_sketch_shoes_pt \
 --workers=8 \
 --output_size=256 \
 --batch_size=8 \
@@ -16,4 +17,5 @@ CUDA_VISIBLE_DEVICES=1 python training/train.py \
 --l2_lambda=1 \
 --moco_lambda=0.1 \
 --adv_lambda=1 \
+--l_image=0.7 \
 --use_wandb

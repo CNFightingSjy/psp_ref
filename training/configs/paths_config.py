@@ -6,14 +6,16 @@ dataset_paths = {
 	'celeba_train_segmentation': '',
 	'celeba_test_segmentation': '',
 	'ffhq': '',
-	'cloth': '/data/shijianyang/data/sketchGAN_data/psp4color/train/upper',
-	'cloth_test': '/data/shijianyang/data/sketchGAN_data/psp4color/test/upper',
-	'reference': '/data/shijianyang/data/sketchGAN_data/psp4color/train/diff_color_upper',
-	'reference_test': '/data/shijianyang/data/sketchGAN_data/psp4color/test/diff_color_upper',
+	'cloth': '/data/shijianyang/data/sketchGAN_data/psp4color/train/shoes_sketch',
+	'cloth_test': '/data/shijianyang/data/sketchGAN_data/psp4color/test/shoes_sketch',
+	'reference': '/data/shijianyang/data/sketchGAN_data/psp4color/train/shoes',
+	'reference_test': '/data/shijianyang/data/sketchGAN_data/psp4color/test/shoes',
+	'cloth_train_target': '/data/shijianyang/data/sketchGAN_data/psp4color/train/shoes',
+	'cloth_test_target': '/data/shijianyang/data/sketchGAN_data/psp4color/test/shoes'
 }
 
 model_paths = {
-	'stylegan_ffhq': 'pretrained_models/stylegan2-ffhq-config-f.pt',
+	'stylegan_ffhq': 'pretrained_models/stylegan2-cloth.pt',
 	'ir_se50': 'pretrained_models/model_ir_se50.pth',
 	'circular_face': 'pretrained_models/CurricularFace_Backbone.pth',
 	'mtcnn_pnet': 'pretrained_models/mtcnn/pnet.npy',
